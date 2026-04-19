@@ -459,7 +459,101 @@ footer{background:var(--navy);padding:2.5rem 3.5rem;border-top:1px solid rgba(25
 @media (max-width:960px){
   section[id],div[id]{scroll-margin-top:70px}
 }
-@media(max-width:960px){.estimator{max-width:none}.est-row{display:flex;flex-direction:column;gap:1rem}.est-row .fd,.est-row>div{width:100%;max-width:none;text-align:left}.est-result{width:100%}}</style>
+@media(max-width:960px){.estimator{max-width:none}.est-row{display:flex;flex-direction:column;gap:1rem}.est-row .fd,.est-row>div{width:100%;max-width:none;text-align:left}.est-result{width:100%}}
+/* =============================== CONDENSED MOBILE =============================== */
+@media (max-width:600px){
+  /* About photo — smaller */
+  .about-photo{max-width:240px}
+  .about-grid{gap:1.5rem}
+  .about-text p{font-size:.87rem;line-height:1.6;margin-bottom:.75rem}
+  .about-text h2{margin-bottom:.75rem}
+  .abtags{margin-top:1rem}
+
+  /* Section padding — tighter on phones */
+  .dk,.dk2,.lt,.lt2{padding:2.4rem 1.2rem}
+  .trust{padding:1.75rem 1.2rem}
+
+  /* Hero — a touch more compact */
+  .hero-content{padding:5.5rem 1.2rem 2.5rem;gap:1.2rem}
+  .hero-content h1{margin-bottom:0}
+  .h-lead{margin-bottom:.5rem}
+
+  /* Services — keep 1 col but smaller image + tighter */
+  .svc-grid{gap:.7rem;margin-top:1.2rem}
+  .svc-img{aspect-ratio:16/9}
+  .svc-body{padding:.9rem .95rem}
+  .svc h3{font-size:1.3rem;margin-bottom:.3rem}
+  .svc p{font-size:.85rem;line-height:1.5}
+  .svc-tag{margin-top:.55rem}
+
+  /* Why cards — tighter */
+  .why-grid{gap:.8rem}
+  .wcard{padding:1.2rem 1.1rem}
+  .wcard h3{font-size:1.3rem;margin-bottom:.3rem}
+  .wcard p{font-size:.87rem;line-height:1.5}
+
+  /* Prep cards — already 1 col, just tighten */
+  .prep-grid{gap:.7rem;margin-top:1.3rem}
+  .prep-card{padding:1rem 1.05rem}
+  .prep-ico{width:38px;height:38px;margin-bottom:.6rem;border-radius:7px}
+  .prep-ico svg{width:18px;height:18px}
+  .prep-card h3{font-size:1.15rem;margin-bottom:.25rem}
+  .prep-card p{font-size:.85rem;line-height:1.5}
+
+  /* GALLERY — 2 columns on phone (huge scroll save) */
+  .gal-grid{grid-template-columns:1fr 1fr;gap:.5rem}
+  .gal-grid .gi{aspect-ratio:4/3}
+  /* Hero tile spans 2 cols with a shorter aspect */
+  .gal-grid .gi:first-child{grid-column:span 2;grid-row:span 1;aspect-ratio:16/10}
+  .gio{padding:.45rem .55rem}
+  .gio span{font-size:.58rem;letter-spacing:.04em;line-height:1.2}
+
+  /* Exterior grid — 2 cols on phone */
+  .drone-grid{grid-template-columns:1fr 1fr;gap:.5rem}
+  .di{aspect-ratio:4/3}
+  .dtag{font-size:.55rem;padding:.2rem .45rem}
+
+  /* Pricing — tighter card padding */
+  .pgrid{gap:.75rem}
+  .pc{padding:1.25rem 1.15rem}
+  .pc-label{margin-bottom:.6rem}
+  .pc-price{margin-bottom:.6rem}
+  .pc-desc{font-size:.86rem;line-height:1.5;margin-bottom:.85rem}
+  .pc-list{margin-bottom:.85rem}
+  .pc-list li{font-size:.82rem;padding:.4rem 0}
+
+  /* Credentials — keep 1 col but tighter */
+  .cred-grid{gap:.75rem;margin:1.4rem 0 1.5rem}
+  .cred-card{padding:1.1rem}
+  .cred-badge{width:42px;height:42px;margin-bottom:.65rem}
+  .cred-badge svg{width:22px;height:22px}
+  .cred-card h3{font-size:1.2rem;margin-bottom:.25rem}
+  .cred-card p{font-size:.85rem;line-height:1.5}
+  .rev-cta{padding:1.25rem}
+  .rev-cta h3{font-size:1.2rem;margin-bottom:.25rem}
+  .rev-cta p{font-size:.85rem;line-height:1.5}
+
+  /* Contact — tighter */
+  .cinfo .crow{margin-bottom:.8rem}
+  .crow{gap:.8rem}
+
+  /* Trust bar — slightly tighter */
+  .trust-inner{gap:.7rem}
+  .titem{padding:.55rem .45rem}
+
+  /* Booking prep panel */
+  .bkpanel{padding:1.4rem 1.2rem}
+  .bkpanel h2,.bkpanel h3{margin-bottom:.5rem}
+}
+
+@media (max-width:420px){
+  /* Even tighter on narrow phones */
+  .about-photo{max-width:220px}
+  .gal-grid{gap:.4rem}
+  .drone-grid{gap:.4rem}
+  .gio span{font-size:.54rem}
+}
+</style>
 </head>
 <body>
 
