@@ -28,11 +28,11 @@
   --muted2:rgba(255,255,255,.8);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{font-family:"Barlow",sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3.5rem;background:rgba(20,31,46,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07);transition:.3s}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3.5rem;background:rgba(20,31,46,.98);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07);box-shadow:0 2px 12px rgba(0,0,0,.18);transition:.3s}
 nav.sm{padding:.72rem 3.5rem}
 .logo{display:flex;align-items:center;gap:11px;text-decoration:none}
 .stripes{display:flex;flex-direction:column;gap:3.5px}
@@ -114,15 +114,15 @@ h2{font-family:"Barlow Condensed",sans-serif;font-size:clamp(2rem,3.5vw,2.9rem);
 
 /* SERVICES */
 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:2.8rem}
-.svc{background:var(--navy4);border:1px solid rgba(255,255,255,.07);border-radius:6px;overflow:hidden;transition:.3s}
+.svc{background:var(--navy4);border:1px solid rgba(255,255,255,.07);border-radius:6px;transition:.3s;overflow:visible}
 .svc:hover{transform:translateY(-5px);border-color:rgba(240,192,32,.3)}
-.svc-img{aspect-ratio:4/3;overflow:hidden;background:var(--slate)}
+.svc-img{aspect-ratio:4/3;overflow:hidden;background:var(--slate);border-radius:6px 6px 0 0}
 .svc-img img{width:100%;height:100%;object-fit:cover;transition:.4s}
 .svc:hover .svc-img img{transform:scale(1.06)}
 .svc-body{padding:1.4rem}
 .svc-ico{width:44px;height:44px;background:linear-gradient(135deg,rgba(240,192,32,.22),rgba(240,192,32,.08));border:1px solid rgba(240,192,32,.28);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:.9rem}
 .svc-ico svg{width:19px;height:19px;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.svc h3{font-family:"Barlow Condensed",sans-serif;font-size:1.35rem;font-weight:700;text-transform:uppercase;letter-spacing:.01em;margin-bottom:.45rem;color:var(--white)}
+.svc h3{font-family:"Barlow Condensed",sans-serif;font-size:1.35rem;font-weight:700;text-transform:uppercase;letter-spacing:.01em;margin-bottom:.45rem;color:var(--white);word-break:normal;overflow-wrap:break-word;line-height:1.1}
 .svc p{font-size:.8rem;color:var(--muted);line-height:1.65}
 .svc-tag{display:inline-block;margin-top:.8rem;font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--g400);border:1px solid rgba(255,255,255,.1);padding:.2rem .6rem;border-radius:2px}
 
@@ -137,8 +137,8 @@ h2{font-family:"Barlow Condensed",sans-serif;font-size:clamp(2rem,3.5vw,2.9rem);
 
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:5fr 7fr;gap:6rem;align-items:center;margin-top:2.5rem}
-.about-photo{border-radius:6px;overflow:hidden;aspect-ratio:4/5;background:var(--slate);position:relative}
-.about-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.about-photo{border-radius:8px;background:var(--slate);position:relative;max-width:400px;margin:0 auto}
+.about-photo img{width:100%;height:auto;display:block;border-radius:8px}
 .about-badge{position:absolute;bottom:-15px;right:-15px;background:var(--yellow);color:var(--navy);padding:1.2rem 1.4rem;border-radius:4px;box-shadow:0 10px 30px rgba(240,192,32,.3);text-align:center}
 .abn{font-family:"Barlow Condensed",sans-serif;font-size:1.7rem;font-weight:800;display:block}
 .abs{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
@@ -328,12 +328,12 @@ footer{background:var(--navy);padding:2.5rem 3.5rem;border-top:1px solid rgba(25
   .svc-grid{grid-template-columns:1fr 1fr}
   .why-grid{grid-template-columns:1fr}
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
-  .about-photo{aspect-ratio:3/2}
+  .about-photo{max-width:340px}
   .about-badge{display:none}
   .gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:200px}
   .gal-grid .gi:first-child{grid-column:span 2;grid-row:span 1}
   .drone-grid{grid-template-columns:1fr 1fr}
-  .pgrid{grid-template-columns:1fr;max-width:340px}
+  .pgrid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
   .blayout{grid-template-columns:1fr}
   .fd2{grid-template-columns:1fr}
   .cgrid{grid-template-columns:1fr;gap:2.5rem}
@@ -341,7 +341,125 @@ footer{background:var(--navy);padding:2.5rem 3.5rem;border-top:1px solid rgba(25
   .ft{flex-direction:column;align-items:flex-start;gap:1rem}
   .est-row{flex-direction:column}
 }
-.nphone{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .75rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:5px;color:var(--white)!important;font-weight:700;font-size:.82rem;letter-spacing:.01em;transition:.2s}.nphone:hover{background:rgba(240,192,32,.14);border-color:rgba(240,192,32,.5);color:var(--yellow)!important}.nphone svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}.nwa{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:#25D366;border-radius:50%;transition:.2s;color:#fff!important}.nwa:hover{transform:scale(1.08);background:#1EB954}.nwa svg{width:18px;height:18px;fill:#fff}.prep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}.prep-card{background:#fff;border:1px solid var(--g200);border-radius:8px;padding:1.5rem;transition:.25s}.prep-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(20,31,46,.08);border-color:rgba(240,192,32,.4)}.prep-ico{width:44px;height:44px;background:linear-gradient(135deg,rgba(240,192,32,.22),rgba(240,192,32,.08));border:1px solid rgba(240,192,32,.28);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}.prep-ico svg{width:20px;height:20px}.prep-card h3{font-family:"Barlow Condensed",sans-serif;font-size:1.35rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.02em}.prep-card p{font-size:.92rem;color:var(--g500);line-height:1.55}@media (max-width:900px){.prep-grid{grid-template-columns:1fr 1fr;gap:1rem}.prep-card{padding:1.2rem}}@media (max-width:600px){.prep-grid{grid-template-columns:1fr}}.cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:2rem 0 2.5rem}.cred-card{background:#fff;border:1px solid var(--g200);border-radius:8px;padding:1.5rem;text-align:left;transition:.25s}.cred-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(20,31,46,.08);border-color:rgba(240,192,32,.4)}.cred-badge{width:48px;height:48px;background:linear-gradient(135deg,rgba(240,192,32,.22),rgba(240,192,32,.08));border:1px solid rgba(240,192,32,.28);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}.cred-badge svg{width:24px;height:24px;stroke-linecap:round;stroke-linejoin:round}.cred-card h3{font-family:"Barlow Condensed",sans-serif;font-size:1.35rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.02em}.cred-card p{font-size:.92rem;color:var(--g500);line-height:1.55}.rev-cta{background:var(--navy);color:#fff;border-radius:10px;padding:2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}.rev-cta h3{font-family:"Barlow Condensed",sans-serif;font-size:1.5rem;color:#fff;margin-bottom:.3rem}.rev-cta p{font-size:.95rem;color:rgba(255,255,255,.75);max-width:520px;line-height:1.55}@media (max-width:900px){.cred-grid{grid-template-columns:1fr;gap:1rem}.rev-cta{flex-direction:column;text-align:left;align-items:flex-start}}</style>
+.nphone{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .75rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:5px;color:var(--white)!important;font-weight:700;font-size:.82rem;letter-spacing:.01em;transition:.2s;white-space:nowrap;text-decoration:none}.nphone:hover{background:rgba(240,192,32,.14);border-color:rgba(240,192,32,.5);color:var(--yellow)!important}.nphone svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}.nwa{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:#25D366;border-radius:50%;transition:.2s;color:#fff!important}.nwa:hover{transform:scale(1.08);background:#1EB954}.nwa svg{width:18px;height:18px;fill:#fff}.prep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}.prep-card{background:#fff;border:1px solid var(--g200);border-radius:8px;padding:1.5rem;transition:.25s}.prep-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(20,31,46,.08);border-color:rgba(240,192,32,.4)}.prep-ico{width:44px;height:44px;background:linear-gradient(135deg,rgba(240,192,32,.22),rgba(240,192,32,.08));border:1px solid rgba(240,192,32,.28);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}.prep-ico svg{width:20px;height:20px}.prep-card h3{font-family:"Barlow Condensed",sans-serif;font-size:1.35rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.02em}.prep-card p{font-size:.92rem;color:var(--g500);line-height:1.55}@media (max-width:900px){.prep-grid{grid-template-columns:1fr 1fr;gap:1rem}.prep-card{padding:1.2rem}}@media (max-width:600px){.prep-grid{grid-template-columns:1fr}}.cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:2rem 0 2.5rem}.cred-card{background:#fff;border:1px solid var(--g200);border-radius:8px;padding:1.5rem;text-align:left;transition:.25s}.cred-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(20,31,46,.08);border-color:rgba(240,192,32,.4)}.cred-badge{width:48px;height:48px;background:linear-gradient(135deg,rgba(240,192,32,.22),rgba(240,192,32,.08));border:1px solid rgba(240,192,32,.28);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}.cred-badge svg{width:24px;height:24px;stroke-linecap:round;stroke-linejoin:round}.cred-card h3{font-family:"Barlow Condensed",sans-serif;font-size:1.35rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.02em}.cred-card p{font-size:.92rem;color:var(--g500);line-height:1.55}.rev-cta{background:var(--navy);color:#fff;border-radius:10px;padding:2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}.rev-cta h3{font-family:"Barlow Condensed",sans-serif;font-size:1.5rem;color:#fff;margin-bottom:.3rem}.rev-cta p{font-size:.95rem;color:rgba(255,255,255,.75);max-width:520px;line-height:1.55}@media (max-width:900px){.cred-grid{grid-template-columns:1fr;gap:1rem}.rev-cta{flex-direction:column;text-align:left;align-items:flex-start}}.nav-contact{display:none;align-items:center;gap:.6rem;margin-left:auto;margin-right:1rem}@media(max-width:960px){.nav-contact{display:flex}.navlinks .nphone,.navlinks .nwa{display:none}}@media(max-width:480px){.nav-contact .nphone{padding:.4rem .55rem;font-size:.75rem;gap:.3rem}.nav-contact .nphone svg{width:11px;height:11px}.nav-contact .nwa{width:32px;height:32px}.nav-contact .nwa svg{width:15px;height:15px}.nav-contact{gap:.45rem;margin-right:.6rem}}
+/* =============================== MOBILE REDESIGN =============================== */
+
+/* ----- PHONE (≤600px) — dedicated breakpoint, phones only ----- */
+@media (max-width:600px){
+  /* Hero */
+  .hero-content{padding:6.5rem 1.2rem 3rem;gap:1.5rem}
+  .hero-content h1{font-size:3rem;line-height:.95;letter-spacing:-.01em}
+  .h-lead{font-size:1rem;line-height:1.5}
+  .h-tag{font-size:.65rem}
+  .h-btns{gap:.7rem;flex-wrap:wrap}
+  .bta,.btb{padding:.85rem 1.4rem;font-size:.8rem;letter-spacing:.05em}
+
+  /* Stat pills — 3 evenly distributed, not 2+1 */
+  .h-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;width:100%}
+  .stat-pill{padding:.55rem .5rem;gap:.45rem;justify-content:flex-start;min-width:0}
+  .stat-ico{width:28px;height:28px}
+  .stat-ico svg{width:14px;height:14px}
+  .spn{font-size:1.15rem}
+  .spl{font-size:.58rem;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+  /* Show .hcards on mobile — 2x2 grid (was display:none) */
+  .hcards{display:grid!important;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.5rem}
+  .hcard{padding:.75rem .7rem;gap:.65rem;border-radius:6px;border-left-width:2px}
+  .hcard-ico{width:34px;height:34px}
+  .hcard-ico svg{width:16px;height:16px}
+  .hcard h4{font-size:.78rem;margin-bottom:.05rem}
+  .hcard p{font-size:.64rem;line-height:1.3}
+
+  /* Trust bar — tighter on phones */
+  .trust{padding:2rem 1.2rem}
+  .trust-inner{grid-template-columns:1fr 1fr;gap:.9rem}
+  .titem{padding:.6rem .5rem;align-items:flex-start}
+  .titem h4{font-size:.78rem;line-height:1.15}
+  .titem p{font-size:.65rem;line-height:1.3}
+  .tico{width:32px;height:32px}
+  .tico svg{width:15px;height:15px}
+
+  /* Sections — less padding, tighter */
+  .dk,.dk2,.lt,.lt2{padding:3rem 1.2rem}
+  h2{font-size:1.85rem;line-height:1.05}
+  .eye{font-size:.65rem}
+  .sub{font-size:.88rem;line-height:1.55}
+
+  /* Services — SINGLE column on phones (fixes text clipping for good) */
+  .svc-grid{grid-template-columns:1fr;gap:.9rem;margin-top:1.5rem}
+  .svc-img{aspect-ratio:16/10}
+  .svc-body{padding:1.1rem}
+  .svc h3{font-size:1.45rem;line-height:1.1}
+  .svc p{font-size:.88rem}
+
+  /* Why */
+  .wcard{padding:1.5rem 1.2rem}
+  .wcard h3{font-size:1.4rem}
+  .wcard p{font-size:.9rem}
+
+  /* About */
+  .about-grid{gap:2rem}
+  .about-text h2{font-size:1.85rem}
+
+  /* Preparing Your Property — already single col at 600px */
+  .prep-card h3{font-size:1.2rem}
+  .prep-card p{font-size:.88rem}
+
+  /* Gallery — SINGLE column, proper aspect ratio, no fixed height */
+  .gal-grid{grid-template-columns:1fr;grid-auto-rows:auto;gap:.7rem}
+  .gal-grid .gi{aspect-ratio:4/3}
+  .gal-grid .gi:first-child{grid-column:span 1;grid-row:span 1;aspect-ratio:3/2}
+  .gi img{width:100%;height:100%;display:block}
+  /* Always show caption on mobile (no hover state possible on touch) */
+  .gio{opacity:1;background:linear-gradient(to top,rgba(14,22,35,.9) 0%,transparent 65%);align-items:flex-end;padding:.6rem .8rem}
+  .gio span{font-size:.68rem}
+
+  /* Drone/exterior — 1 col on phones */
+  .drone-grid{grid-template-columns:1fr;gap:.7rem}
+  .di{aspect-ratio:16/10}
+  .dtag{font-size:.6rem}
+
+  /* Pricing */
+  .pgrid{grid-template-columns:1fr;gap:1rem;max-width:none}
+  .pc{padding:1.4rem 1.3rem}
+  .pc-label{font-size:.72rem}
+  .pc-price{font-size:2.4rem}
+  .pc-price sup{font-size:1.1rem}
+
+  /* Credentials */
+  .cred-card{padding:1.3rem}
+  .cred-card h3{font-size:1.25rem}
+  .cred-card p{font-size:.88rem}
+  .rev-cta{padding:1.5rem;gap:1rem}
+  .rev-cta h3{font-size:1.3rem;line-height:1.15}
+  .rev-cta p{font-size:.88rem}
+
+  /* Contact */
+  .cinfo h2{font-size:1.85rem}
+  .crow strong{font-size:1rem}
+  .crow span{font-size:.78rem}
+
+  /* Footer */
+  footer{padding:1.5rem 1.2rem}
+}
+
+/* ----- MEDIUM PHONES (≤420px) — further tightening ----- */
+@media (max-width:420px){
+  .hero-content h1{font-size:2.6rem}
+  .stat-pill{padding:.5rem .4rem;gap:.35rem}
+  .spn{font-size:1rem}
+  .spl{font-size:.55rem}
+  .stat-ico{width:26px;height:26px}
+  .hcard h4{font-size:.72rem}
+  .hcard p{font-size:.6rem}
+  h2{font-size:1.65rem}
+}
+
+/* ----- Kill the sticky-nav-overlap by ensuring section padding-top accounts for nav ----- */
+@media (max-width:960px){
+  section[id],div[id]{scroll-margin-top:70px}
+}
+@media(max-width:960px){.estimator{max-width:none}.est-row{display:flex;flex-direction:column;gap:1rem}.est-row .fd,.est-row>div{width:100%;max-width:none;text-align:left}.est-result{width:100%}}</style>
 </head>
 <body>
 
@@ -350,6 +468,7 @@ footer{background:var(--navy);padding:2.5rem 3.5rem;border-top:1px solid rgba(25
     <div class="stripes"><span class="st stw"></span><span class="st sty"></span><span class="st stb"></span></div>
     <div class="logotype">Property <span class="fl">Flash</span></div>
   </a>
+  <div class="nav-contact"><a href="tel:+447776130735" class="nphone"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.62a16 16 0 0 0 6 6l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>07776 130 735</a><a href="https://wa.me/447776130735" class="nwa" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.5 11.5 0 0 0 2.1 17.4L.5 23.5l6.2-1.6A11.5 11.5 0 0 0 20.5 3.5zM12 21.3a9.3 9.3 0 0 1-4.7-1.3l-.3-.2-3.7 1 1-3.6-.2-.4a9.3 9.3 0 1 1 7.9 4.4zm5.1-7c-.3-.1-1.7-.8-1.9-.9s-.4-.1-.6.1-.7.9-.9 1.1-.3.1-.6 0c-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.9-1.5.1-.2 0-.3 0-.5s-.6-1.5-.9-2c-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.3 2.1-1.3 3.3 0 1.3.9 2.8 1.1 3 .2.2 2.5 3.9 6 5.2 2.7 1.1 3.3.9 3.9.9s1.7-.7 2-1.4.3-1.3.2-1.4-.3-.1-.5-.3z"/></svg></a></div>
   <ul class="navlinks" id="nm">
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
@@ -357,7 +476,7 @@ footer{background:var(--navy);padding:2.5rem 3.5rem;border-top:1px solid rgba(25
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#prepare">Prep Guide</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="tel:+447776130735" class="nphone"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.42 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.62a16 16 0 0 0 6 6l.97-.97a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>07776 130 735</a></li><li><a href="https://wa.me/447776130735" class="nwa" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.5 11.5 0 0 0 2.1 17.4L.5 23.5l6.2-1.6A11.5 11.5 0 0 0 20.5 3.5zM12 21.3a9.3 9.3 0 0 1-4.7-1.3l-.3-.2-3.7 1 1-3.6-.2-.4a9.3 9.3 0 1 1 7.9 4.4zm5.1-7c-.3-.1-1.7-.8-1.9-.9s-.4-.1-.6.1-.7.9-.9 1.1-.3.1-.6 0c-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.9-1.5.1-.2 0-.3 0-.5s-.6-1.5-.9-2c-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.3 2.1-1.3 3.3 0 1.3.9 2.8 1.1 3 .2.2 2.5 3.9 6 5.2 2.7 1.1 3.3.9 3.9.9s1.7-.7 2-1.4.3-1.3.2-1.4-.3-.1-.5-.3z"/></svg></a></li><li><a href="#booking" class="nbtn">Book a Shoot</a></li>
+    <li><a href="#booking" class="nbtn">Book a Shoot</a></li>
   </ul>
   <button class="brgr" onclick="document.getElementById('nm').classList.toggle('open')">
     <span></span><span></span><span></span>
