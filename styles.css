@@ -550,3 +550,28 @@ footer{background:var(--navy);padding:2.5rem 3.5rem;border-top:1px solid rgba(25
 /* contained diagram thumbnails (floor plan / EPC) */
 .svc-img.wimg{background:#fff}
 .svc-img.wimg img{padding:10px;box-sizing:border-box}
+
+
+/* === Services dropdown === */
+.navlinks .has-sub{position:relative;align-self:stretch;display:flex;align-items:center}
+.navlinks .has-sub>a{display:inline-flex;align-items:center;gap:.34rem}
+.navlinks .has-sub>a::after{content:"";width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);position:relative;top:-2px;opacity:.7;transition:.2s}
+.navlinks .has-sub:hover>a::after{opacity:1}
+.navlinks .has-sub::before{content:"";position:absolute;top:100%;left:-10px;right:-10px;height:16px}
+.navlinks .subnav{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(6px);min-width:190px;list-style:none;background:var(--navy2);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:.45rem;box-shadow:0 16px 40px rgba(8,13,22,.45);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,transform .18s ease;z-index:1000}
+.navlinks .has-sub:hover .subnav,.navlinks .has-sub:focus-within .subnav{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.navlinks .subnav li{width:100%}
+.navlinks .subnav a{display:block;padding:.52rem .7rem;border-radius:6px;font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+.navlinks .subnav a:hover{background:rgba(255,255,255,.08);color:var(--yellow)}
+@media(max-width:960px){
+  .navlinks .has-sub{align-self:auto;width:auto;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+  .navlinks .has-sub>a::after{display:none}
+  .navlinks .has-sub::before{display:none}
+  .navlinks .subnav{position:static;transform:none;opacity:1;visibility:visible;pointer-events:auto;background:none;border:none;box-shadow:none;padding:0;margin:0;display:flex;flex-direction:column;align-items:center;gap:.7rem;min-width:0;top:auto}
+  .navlinks .subnav a{padding:0;font-size:.72rem;color:var(--g400)}
+}
+
+/* === EPC rating chart === */
+.epc-chart{margin:0}
+.epc-chart svg{display:block;width:100%;height:auto}
+.epc-chart figcaption{margin-top:.85rem;font-size:.8rem;color:var(--g500);text-align:center;line-height:1.4}
