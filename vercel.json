@@ -1,4 +1,10 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/photography", "destination": "/property-photography/", "permanent": true },
+    { "source": "/photography/:path*", "destination": "/property-photography/", "permanent": true },
+    { "source": "/gallery", "destination": "/property-photography/", "permanent": true },
+    { "source": "/gallery/:path*", "destination": "/property-photography/", "permanent": true }
+  ]
 }
